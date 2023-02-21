@@ -10,7 +10,7 @@ const con = mysql.createConnection({
 	host: DB_HOST || '127.0.0.1',
 	user: DB_USER || 'root',
 	password: DB_PASS,
-	database: DB_NAME || 'todos',
+	database: DB_NAME || 'images',
 	multipleStatements: true,
 });
 
@@ -20,13 +20,22 @@ con.connect(function (err) {
 
 	//modify the SQL line to create my own tables
 	let sql =
-		'DROP TABLE if exists items; CREATE TABLE items(id INT NOT NULL AUTO_INCREMENT, text VARCHAR(40) not null, complete BOOLEAN, PRIMARY KEY (id));';
+		'DROP TABLE if exists human_imgs; CREATE TABLE humanImages(humID INT NOT NULL AUTO_INCREMENT, name VARCHAR(40) not null, src VARCHAR(100) not null, PRIMARY KEY (humID));';
 	con.query(sql, function (err, result) {
 		if (err) throw err;
-		console.log('Table creation `items` was successful!');
+		console.log('Table creation `humanImages` was successful!');
 
 		console.log('Closing...');
 	});
+
+	// let sql =
+	// 	'DROP TABLE if exists animal_imgs; CREATE TABLE animalImages(animID INT NOT NULL AUTO_INCREMENT, name VARCHAR(40) not null, src VARCHAR(100) not null, PRIMARY KEY (animID),  FOREIGN KEY (HumID) REFERENCES humanImages(HumID)) ;';
+	// con.query(sql, function (err, result) {
+	// 	if (err) throw err;
+	// 	console.log('Table creation `humanImages` was successful!');
+
+	// 	console.log('Closing...');
+	// });
 
 	con.end();
 });

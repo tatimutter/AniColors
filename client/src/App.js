@@ -8,34 +8,44 @@ import ErrorPage from './components/ErrorPage';
 import { Routes, Route, NavLink } from 'react-router-dom';
 
 function App() {
-	//const navigate = useNavigate();
+	// 	useEffect(() => {
+	// 		getHumImgs();
+	// 	}, []);
+
+	// 	let [humImgs, setHumImgs] = useState([]);
+
+	// let [newImage, setNewImage] = useState({
+	// 	name
+	// })
+
+	// const getHumImgs = async () => {
+	// 	fetch('/humans')
+
+	// }
+
 	return (
 		<div className="App">
-			{/* <header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer">
-					Learn React
-				</a>
-			</header> */}
-			<nav className="navbar">
+			<nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 rounded">
 				<NavLink to="/">
-					<button className="button-danger">Home</button>
+					<button type="button" className="btn bg-transparent">
+						Home
+					</button>
 				</NavLink>
 				<NavLink to="/about">
-					<button className="button-light">About</button>
+					{/* <button type="button" className="btn bg-transparent">
+						About
+					</button> */}
+				</NavLink>
+				<NavLink to="/contact">
+					<button type="button" className="btn bg-transparent">
+						Contact
+					</button>
 				</NavLink>
 			</nav>
 			<div className="test">
 				<Routes>
-					<Route path="/" element={<Home />}></Route>
-					<Route path="/about" element={<About />}></Route>
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
 					<Route path="*" element={<ErrorPage />} />
 				</Routes>
 			</div>
