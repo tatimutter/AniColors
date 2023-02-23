@@ -4,8 +4,12 @@ import React from 'react';
 
 import About from './components/About';
 import Home from './components/Home';
+import Action from './components/Action';
 import ErrorPage from './components/ErrorPage';
+
 import { Routes, Route, NavLink } from 'react-router-dom';
+
+import homePic from './pictures/peacockfeather.jpg';
 
 function App() {
 	// 	useEffect(() => {
@@ -32,9 +36,9 @@ function App() {
 					</button>
 				</NavLink>
 				<NavLink to="/about">
-					{/* <button type="button" className="btn bg-transparent">
+					<button type="button" className="btn bg-transparent">
 						About
-					</button> */}
+					</button>
 				</NavLink>
 				<NavLink to="/contact">
 					<button type="button" className="btn bg-transparent">
@@ -42,11 +46,13 @@ function App() {
 					</button>
 				</NavLink>
 			</nav>
+
 			<div className="test">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
 					<Route path="*" element={<ErrorPage />} />
+					<Route path="/action" element={<Action />} />
 				</Routes>
 			</div>
 		</div>

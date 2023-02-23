@@ -1,0 +1,21 @@
+.intro {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url('../pictures/peacockfeather.jpg');
+
+	background-size: cover;
+	/* background-size: 100%; */
+	background-repeat: no-repeat;
+	background-position: center;
+
+	height: 100vh;
+}
+
+@media (min-width: 992px) {
+	.intro {
+		margin-top: -58.59px;
+	}
+}
+
+.intro > h1 {
+	color: whitesmoke;
+}

@@ -4,9 +4,9 @@ var router = express.Router();
 const db = require('../model/helper.js');
 
 /* GET home page. */
-// router.get('/', function (req, res, next) {
-// 	res.send({ title: 'Express' });
-// });
+router.get('/', function (req, res, next) {
+	res.send({ title: 'Express' });
+});
 
 router.get('/', function (req, res, next) {
 	db('SELECT * FROM human_images')
