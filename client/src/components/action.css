@@ -1,7 +1,27 @@
+.container {
+	margin-top: 20vh;
+}
+
 .imgDiv {
 	height: 60vh;
 }
 
-.randomImg {
+#randomImg {
 	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.dogFilter {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+}
+
+.catFilter {
+	filter: sepia(100%);
+}
+
+.xFilter {
+	filter: brightness(180%);
+	-webkit-filter: brightness(180%);
 }

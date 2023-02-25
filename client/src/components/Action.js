@@ -1,39 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
-import homePic from '../pictures/peacockfeather.jpg';
 import './action.css';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 
 const url =
-	'https://pixabay.com/api/?key=33852742-89e11093af8722799d8e1010f&category=nature,animals,people&image_type=photo';
+	'https://pixabay.com/api/?key=33852742-89e11093af8722799d8e1010f&category=nature,animals&image_type=photo';
+
 export default function Action(props) {
 	const [animal, setAnimal] = useState(null);
 	const [error, setError] = useState('');
 	const [image, setImage] = useState(null);
 	const [loading, setLoading] = useState(false);
+	const [filterClass, setFilterClass] = useState(null);
+	const [checked, setChecked] = useState(null);
 
-	const handleChange = (e) => {
+	const chooseAnimal = (e) => {
 		setAnimal(e.target.value);
-		//here I will have to change colors for each animal
+		changeColor(e.target.value);
 	};
 
-	const uncheckOthers = () => {
-		//how?
+	const changeColor = (animal) => {
+		if (animal === 'dog') {
+			setFilterClass('dogFilter');
+		}
+		if (animal === 'cat') {
+			setFilterClass('catFilter');
+		}
+		if (animal === 'goat') {
+			setFilterClass('xFilter');
+		}
 	};
 
 	const fetchImage = async () => {
-		//reset form
-		//call the APIs and
-
+		setAnimal(null); //Clearing all radio buttons. Solved, thanks to Suraj Sharma https://surajsharma.net/blog/react-handle-radio-buttons
 		setError('');
 		setImage(null);
 		setLoading(true);
-		console.log('image is loading');
+		setFilterClass(null);
 
 		try {
 			let response = await fetch(url);
@@ -61,7 +70,7 @@ export default function Action(props) {
 	};
 
 	return (
-		<Container>
+		<Container className="container">
 			{/* Stack the columns on mobile by making one full-width and the other half-width */}
 			<Row>
 				<Col xs={12} md={8}>
@@ -69,7 +78,9 @@ export default function Action(props) {
 						{!image && <h2>Choose your image</h2>}
 						{image && (
 							<img
-								className="randomImg"
+								className={filterClass}
+								// style={`filter:grayscale(100%)`}
+								id="randomImg"
 								alt="Random img from Pixabay API"
 								src={image}
 							/>
@@ -78,54 +89,39 @@ export default function Action(props) {
 					<br />
 				</Col>
 				<Col xs={6} md={4}>
+					{/* FORM OPTION*/}
+					{/* HOW CAN I UNCHECK A BUTTON WHEN ANOTHER ONE IS CHECKED? */}
 					<Form>
-						{/* HOW DO I DISABLE THE OTHERS WHEN ONE IS CLICKED? */}
 						<div key="reverse-radio" className="mb-3">
 							<Form.Check
 								reverse
 								type="radio"
 								id="reverse-radio"
-								value="non-human1"
-								label={`Non-human 1`}
-								onChange={handleChange}
-								checked={animal === 'Non-human 1'}
-								onclick={uncheckOthers}
+								value="dog"
+								label={`Dog`}
+								onChange={chooseAnimal}
+								checked={animal === 'dog'}
 							/>
 							<Form.Check
 								reverse
 								type="radio"
 								id="reverse-radio"
-								value="non-human2"
-								label={`Non-human 2`}
-								onChange={handleChange}
-								checked={animal === 'Non-human 2'}
-								onclick={uncheckOthers}
+								value="cat"
+								label={`Cat`}
+								onChange={chooseAnimal}
+								checked={animal === 'cat'}
 							/>
 							<Form.Check
 								reverse
 								type="radio"
 								id="reverse-radio"
-								value="non-human3"
-								label={`Non-human 3`}
-								onChange={handleChange}
-								checked={animal === 'Non-human 3'}
-								onclick={uncheckOthers}
+								value="goat"
+								label={`Goat`}
+								onChange={chooseAnimal}
+								checked={animal === 'goat'}
 							/>
-							{/* Keeping an example of Bootstrap disabled radio button, just in case */}
-							{/* <Form.Check
-									disabled
-									type={type}
-									label={`disabled ${type}`}
-									id={`disabled-default-${type}`}
-								/> */}
 						</div>
 					</Form>
-
-					<p>
-						<strong>TESTING:</strong> You chose {animal}{' '}
-						{/* Testing if radio buttons are working */}
-						<br />
-					</p>
 
 					<Button variant="info" onClick={fetchImage}>
 						New image
@@ -134,4 +130,35 @@ export default function Action(props) {
 			</Row>
 		</Container>
 	);
+}
+
+{
+	/* BUTTON GROUP OPTION */
+}
+{
+	/*<ButtonGroup vertical>
+						<Button
+							variant="info"
+							value="dog"
+							//onClick={chooseAnimal}
+							onClick={dogColor}>
+							{' '}
+							
+							Dog
+						</Button>
+						 <Button
+							variant="info"
+							value="cat"
+							onClick={chooseAnimal}
+							onChange={changeColor}>
+							Cat
+						</Button>
+						<Button
+							variant="info"
+							value="goat"
+							onClick={chooseAnimal}
+							onChange={changeColor}>
+							Goat
+						</Button> 
+					</ButtonGroup>*/
 }

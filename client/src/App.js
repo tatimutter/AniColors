@@ -9,8 +9,6 @@ import ErrorPage from './components/ErrorPage';
 
 import { Routes, Route, NavLink } from 'react-router-dom';
 
-import homePic from './pictures/peacockfeather.jpg';
-
 function App() {
 	// 	useEffect(() => {
 	// 		getHumImgs();
@@ -29,7 +27,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 rounded">
+			<nav className="navbar fixed-top justify-content-end navbar-expand-lg navbar-light shadow p-3 mb-5">
 				<NavLink to="/">
 					<button type="button" className="btn bg-transparent">
 						Home
@@ -47,14 +45,14 @@ function App() {
 				</NavLink>
 			</nav>
 
-			<div className="test">
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/about" element={<About />} />
-					<Route path="*" element={<ErrorPage />} />
-					<Route path="/action" element={<Action />} />
-				</Routes>
-			</div>
+			{/* <div className="test"> */}
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+				<Route path="*" element={<ErrorPage />} />
+				<Route path="/action" element={<Action />} />
+			</Routes>
+			{/* </div> */}
 		</div>
 	);
 }

@@ -11,12 +11,20 @@ import Button from 'react-bootstrap/Button';
 function Home(props) {
 	return (
 		<>
-			<div className="intro bg-image shadow-2-strong">
-				<h1>AniColors</h1>
-
-				<NavLink to="/action">
-					<Button variant="outline-light">START</Button>
-				</NavLink>
+			<div className="backgroundDiv bg-image shadow-2-strong">
+				<h1 className="display-1 fw-bold">AniColors</h1>
+				<p className="lead">
+					There are endless words on Earth, as many as any of us can see.
+					<br />
+					Would you like to see the world through other animals' eyes?
+				</p>
+				<div className="buttonDiv">
+					<NavLink to="/action">
+						<Button className="startBtn" variant="outline-light" size="lg">
+							TAKE A LOOK{' '}
+						</Button>
+					</NavLink>
+				</div>
 			</div>
 		</>
 	);
