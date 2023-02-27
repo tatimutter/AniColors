@@ -1,27 +1,166 @@
-.container {
-	margin-top: 20vh;
+.actionBG {
+	background-image: linear-gradient(
+			rgba(241, 239, 239, 0.9),
+			rgba(241, 239, 239, 0.7)
+		),
+		url('../images/peacockfeather.jpg');
+	background-size: cover;
+	/* background-size: 100%; */
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	text-align: center;
+	/* display: flex;
+	align-items: center; */
+	margin-top: 0px !important;
+	color: black;
+	z-index: index -2;
+}
+
+@media (min-width: 992px) {
+	.actionBG {
+		margin-top: -58.59px;
+	}
+}
+
+.rowContainer {
+	padding-top: 30vh !important;
+
+	margin-right: 0;
+}
+
+/* Left column */
+
+.leftCol {
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
 }
 
 .imgDiv {
 	height: 60vh;
+	display: flex;
+	/* align-items: center; */
+	justify-content: flex-end;
 }
 
+.errorDiv {
+	text-align: center;
+	color: red;
+	font-weight: 800;
+	font-size: 3rem;
+}
+
+.spinner-border {
+	width: 5rem;
+	height: 5rem;
+	margin-top: 10vh;
+}
 #randomImg {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 }
 
-.dogFilter {
-	filter: grayscale(100%);
-	-webkit-filter: grayscale(100%);
+.box3 {
+	width: 300px;
+	margin: 50px auto;
+	border-radius: 15px;
+	background: #14c8cc;
+	color: black;
+	padding: 1.5vw 1vw;
+	text-align: center;
+	/* font-weight: 900; */
+
+	position: relative;
 }
+
+.box3 > p {
+	padding-top: 1.5vh;
+	color: black;
+	font-weight: 400;
+}
+
+/* speech bubble 13 */
+
+.speachBubble:before {
+	content: '';
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 15px solid #14c8cc;
+	border-right: 15px solid transparent;
+	border-top: 15px solid #14c8cc;
+	border-bottom: 15px solid transparent;
+	right: -16px;
+	top: 0px;
+}
+
+/* Right column */
+.btnContainer {
+	padding: 3rem;
+	height: 60vh;
+	/*background-image: linear-gradient(		rgba(241, 239, 239, 0.4),		rgba(241, 239, 239, 0.7)	);
+	*/
+	background: rgba(255, 255, 255, 0.1);
+
+	border-radius: 20px;
+	box-shadow: rgba(0, 0, 0, 0.4) 10px 10px 10px 10px;
+	margin-top: 0;
+	text-align: center;
+	width: 65%;
+	/*CHECKRESPONSIVITY!putsmallerwidthandexplainwhy*/
+	/createmediaqueriesforresponsiveness/: ;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+}
+
+.BgBtn {
+	padding-bottom: 3vh;
+	color: black;
+	font-size: larger;
+}
+
+.BgBtn > img {
+	width: 3.3vw;
+	padding-left: 0.5vw;
+}
+
+label {
+	margin-right: 2vw;
+
+	font-size: larger;
+}
+
+.imgBtn {
+	margin-top: 9vh;
+	background-color: #14c8cc !important;
+	color: black;
+	box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 2px;
+
+	/* margin-right: 3vw; */
+}
+
+/* FILTERS */
 
 .catFilter {
-	filter: sepia(100%);
+	filter: grayscale(85%) blur(1.5px) opacity(85%);
+	-webkit-filter: grayscale(85%) blur(1.5px) opacity(85%);
 }
 
-.xFilter {
-	filter: brightness(180%);
-	-webkit-filter: brightness(180%);
+.cowFilter {
+	filter: sepia(100%) hue-rotate(345deg) saturate(900%);
+	-webkit-filter: sepia(100%) hue-rotate(345deg) saturate(900%);
+}
+
+.whaleFilter {
+	filter: grayscale(100%) brightness(0.8);
+	-webkit-filter: grayscale(100%) brightness(0.8);
+}
+
+.beeFilter {
+	filter: sepia(100%) hue-rotate(190deg) saturate(900%);
+	-webkit-filter: sepia(100%) hue-rotate(190deg) saturate(900%);
 }

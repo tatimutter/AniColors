@@ -14,7 +14,7 @@ function Home(props) {
 			<div className="backgroundDiv bg-image shadow-2-strong">
 				<h1 className="display-1 fw-bold">AniColors</h1>
 				<p className="lead">
-					There are endless words on Earth, as many as any of us can see.
+					There are endless words on Earth, as many as we can see.
 					<br />
 					Would you like to see the world through other animals' eyes?
 				</p>

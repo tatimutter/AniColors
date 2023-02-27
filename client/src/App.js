@@ -28,21 +28,42 @@ function App() {
 	return (
 		<div className="App">
 			<nav className="navbar fixed-top justify-content-end navbar-expand-lg navbar-light shadow p-3 mb-5">
-				<NavLink to="/">
-					<button type="button" className="btn bg-transparent">
-						Home
-					</button>
-				</NavLink>
-				<NavLink to="/about">
-					<button type="button" className="btn bg-transparent">
-						About
-					</button>
-				</NavLink>
-				<NavLink to="/contact">
-					<button type="button" className="btn bg-transparent">
-						Contact
-					</button>
-				</NavLink>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<NavLink exact to="/">
+								<button type="button" className="btn bg-transparent navBtn">
+									Home
+								</button>
+							</NavLink>
+						</li>
+						<li class="nav-item">
+							<NavLink to="/about">
+								<button type="button" className="btn bg-transparent navBtn">
+									About
+								</button>
+							</NavLink>
+						</li>
+						<li class="nav-item">
+							<NavLink to="/contact">
+								<button type="button" className="btn bg-transparent navBtn">
+									Contact
+								</button>
+							</NavLink>
+						</li>
+					</ul>
+				</div>
 			</nav>
 
 			{/* <div className="test"> */}

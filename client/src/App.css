@@ -4,32 +4,46 @@
 
 .navbar {
 	background-image: radial-gradient(circle, #14c8cc, #b393d3, #553c9a);
-
 	/* ANOTHER RADIANT OPTION: background-image: linear-gradient(to right, #553c9a, #14c8cc, #b393d3); */
 }
 
-/* Route Home */
+.navbar-toggler {
+	color: whitesmoke !important;
+	border-color: whitesmoke;
+}
+
+.navbar-toggler-icon {
+	color: whitesmoke !important;
+}
+
+.navBtn:hover {
+	font-weight: 700;
+	font-size: larger;
+	color: whitesmoke;
+	border-style: none;
+}
+
+/* HOME PAGE */
 
 .backgroundDiv {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url('./pictures/peacockfeather.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+		url('./images/peacockfeather.jpg');
 	background-size: cover;
 	/* background-size: 100%; */
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 100vh;
 	text-align: center;
-	/* display: flex;
-	align-items: center; */
-	margin-top: 0px !important;
+
+	padding-top: 15vh;
 	color: whitesmoke;
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
 	.backgroundDiv {
-		margin-top: -58.59px;
+		margin-top: -15vh;
 	}
-}
+} */
 
 .backgroundDiv > h1 {
 	text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
@@ -57,6 +71,11 @@
 	border-width: 0.2rem;
 }
 
-.lead {
+.display-1 > .lead {
 	margin: 5% auto;
+}
+
+/* ERROR PAGE */
+errorPageDiv {
+	padding-top: 15vh;
 }
