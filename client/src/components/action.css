@@ -8,23 +8,33 @@
 	/* background-size: 100%; */
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 100vh;
+	height: 200vh;
+	/* width: 100%; */
+	min-width: auto;
 	text-align: center;
 	/* display: flex;
 	align-items: center; */
-	margin-top: 0px !important;
+	/* margin-top: 0px !important; */
 	color: black;
-	z-index: index -2;
+	/* z-index: index -2; */
+}
+
+@media (orientation: landscape) {
+	/* .actionBG {
+		height: 300vh;
+	} */
 }
 
 @media (min-width: 992px) {
 	.actionBG {
-		margin-top: -58.59px;
+		margin-top: 0vh;
+		height: 100vh;
+		min-width: auto;
 	}
 }
 
 .rowContainer {
-	padding-top: 30vh !important;
+	padding-top: 25vh !important;
 
 	margin-right: 0;
 }
@@ -56,14 +66,48 @@
 	height: 5rem;
 	margin-top: 10vh;
 }
+
+.defaultImg {
+	position: relative;
+}
+
+.image figcaption {
+	position: absolute;
+	z-index: 2;
+	top: 30%;
+	bottom: 30%;
+	left: 1%;
+	padding-top: 1.5vh;
+	color: black;
+	font-weight: 420;
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+	image figcaption {
+		position: absolute;
+		z-index: 2;
+		top: 10%;
+		bottom: 60%;
+		left: 1%;
+		padding-top: 1.5vh;
+		color: black;
+		font-weight: 420;
+	}
+}
+
 #randomImg {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 }
 
+.pixabayLogo {
+	width:2vw;
+}
+
 .box3 {
-	width: 300px;
+	width: 18vw;
+	height: 50vh;
 	margin: 50px auto;
 	border-radius: 15px;
 	background: #14c8cc;
@@ -71,19 +115,13 @@
 	padding: 1.5vw 1vw;
 	text-align: center;
 	/* font-weight: 900; */
-
+	font-size: medium;
 	position: relative;
 }
 
-.box3 > p {
-	padding-top: 1.5vh;
-	color: black;
-	font-weight: 400;
-}
+/* speech bubble */
 
-/* speech bubble 13 */
-
-.speachBubble:before {
+.speechBubble:before {
 	content: '';
 	width: 0px;
 	height: 0px;
@@ -134,8 +172,8 @@ label {
 	font-size: larger;
 }
 
-.imgBtn {
-	margin-top: 9vh;
+.resetBtn {
+	margin-top: 6vh;
 	background-color: #14c8cc !important;
 	color: black;
 	box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 2px;

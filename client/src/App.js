@@ -49,16 +49,16 @@ function App() {
 							</NavLink>
 						</li>
 						<li class="nav-item">
-							<NavLink to="/about">
+							<NavLink to="/action">
 								<button type="button" className="btn bg-transparent navBtn">
-									About
+									LOOK
 								</button>
 							</NavLink>
 						</li>
 						<li class="nav-item">
-							<NavLink to="/contact">
+							<NavLink to="/about">
 								<button type="button" className="btn bg-transparent navBtn">
-									Contact
+									About
 								</button>
 							</NavLink>
 						</li>

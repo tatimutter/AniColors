@@ -7,13 +7,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-//import Form from 'react-bootstrap/Form';
+import Figure from 'react-bootstrap/Figure';
+import FigureImage from 'react-bootstrap/FigureImage'
+import FigureCaption from 'react-bootstrap/FigureCaption'
 
 import defaultImg from '../images/spider_eyes.jpg';
 import catImage from '../images/icons/cat.png';
 import cowImage from '../images/icons/cow.png';
 import whaleImage from '../images/icons/whale.png';
 import beeImage from '../images/icons/bee.png';
+import pixabayLogo from '../images/logo_square.png'
+
 
 const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&category=nature;animals&image_type=photo`;
 
@@ -80,106 +84,118 @@ export default function Action(props) {
 	};
 
 	return (
-		// <Container className="container">
 		<div className="actionBG">
 			{/* Stack the columns on mobile by making one full-width and the other half-width */}
-			<Row className="rowContainer ">
-				<Col className="leftCol" xs={12} md={8}>
-					<div className="imgDiv">
-						{!image && error && <div class="errorDiv">Error: {error}</div>}
-						{!image && loading && (
-							<div className="spinner-border text-info" role="status"></div>
-						)}
-						{!image && !error && !loading && (
-							<>
-								<div class="box3 speachBubble">
-									<h3>
-										Hi, I'm Pablita! <br />
-										I'm here to help you
-									</h3>
-									<p className="lead">
-										Click on me to see a new image and then on the name of a
-										non-human friend to see through their eyes. Click again on
-										the image to see another one. And if you need me back just
-										click on my button!
-									</p>
-								</div>
+			<Container className="container fluid">
+				<Row className="rowContainer ">
+					<Col className="leftCol" xs={12} md={8} lg={8}>
+						<figure class="image">
+							<div className="imgDiv">
+								{!image && error && <div class="errorDiv">Error: {error}</div>}
+								{!image && loading && (
+									<div className="spinner-border text-info" role="status"></div>
+								)}
+								{!image && !error && !loading && (
+									<>
+										<figcaption class="box3 speechBubble">
+											<h3>
+												Hi, I'm Pablita! <br />
+												I'm here to help you
+											</h3>
+											<p>
+												Click on me to see a new image and then on the name of a
+												non-human friend to see through their eyes. Click again
+												on the image to see another one. <br />
+												And if you need me back just click on my button!
+											</p>
+										</figcaption>
 
-								{/* <!-- By Coding Market -->
-<div class="youtube">
-  <a href="https://www.youtube.com/channel/UCtVM2RthR4aC6o7dzySmExA" target="_blank">by coding market</a>
-</div> */}
-								<img
-									className="defaultImg"
-									alt="DESCRIBE IMG"
-									src={defaultImg}
-									onClick={fetchImage}
-								/>
-							</>
-						)}
-						{image && (
-							<img
-								className={filterClass}
-								id="randomImg"
-								alt="Random img from Pixabay API"
-								src={image}
-								onClick={fetchImage}
-							/>
-						)}
-					</div>
-					<br />
-				</Col>
-				<Col className="rigthCol" xs={12} md={4}>
-					<Container className="btnContainer">
-						<ButtonGroup
-							className="btnGroup"
-							vertical
-							aria-label="Basic example">
-							<Button
-								className="BgBtn"
-								variant="transparent"
-								onClick={handleFilter}
-								checked={animal === 'cat'}
-								value="cat">
-								Cat <img className="cat" alt="" src={catImage} />
-							</Button>
-							<Button
-								className="BgBtn"
-								variant="transparent"
-								onClick={handleFilter}
-								checked={animal === 'cow'}
-								value="cow">
-								Cow <img className="cow" alt="" src={cowImage} />
-							</Button>
-							<Button
-								className="BgBtn"
-								variant="transparent"
-								onClick={handleFilter}
-								checked={animal === 'whale'}
-								value="whale">
-								Whale <img className="whale" alt="" src={whaleImage} />
-							</Button>
-							<Button
-								className="BgBtn"
-								variant="transparent"
-								onClick={handleFilter}
-								checked={animal === 'bee'}
-								value="bee">
-								Bee <img className="bee" alt="" src={beeImage} />
-							</Button>
-						</ButtonGroup>
+										<img
+											className="defaultImg img-fluid"
+											alt="Pablita, the jumping spider"
+											src={defaultImg}
+											onClick={fetchImage}
+										/>
+									</>
+								)}
+								
+        {image && (
+			<Figure>
+			<Figure.Image
+				className={filterClass}
+				id="randomImg"
+				alt="Random img from Pixabay API"
+				src={image}
+				onClick={fetchImage}/>
+			<Figure.Caption className="pixaCaption">
+        Images fetched from Pixabay API.
+		<br/>
+		<img 
+		className="pixabayLogo"
+		alt="Pixabay logo"
+		src={pixabayLogo}/>
 
-						<Button
-							className="imgBtn"
-							variant="info"
-							size="lg"
-							onClick={backToDefImg}>
-							Come back Pablita!
-						</Button>
-					</Container>
-				</Col>
-			</Row>
-			{/* </Container> */}
+      </Figure.Caption>
+    </Figure>
+		)}
+      
+      
+								
+							</div>
+						</figure>
+						<br />
+					</Col>
+					<Col className="rigthCol" xs={12} md={4} lg={4}>
+						<Container fluid className="btnContainer">
+							<ButtonGroup
+								className="btnGroup"
+								vertical
+								aria-label="Basic example">
+								<Button
+									className="BgBtn"
+									variant="transparent"
+									onClick={handleFilter}
+									checked={animal === 'cat'}
+									value="cat">
+									Cat <img className="cat" alt="" src={catImage} />
+								</Button>
+								<Button
+									className="BgBtn"
+									variant="transparent"
+									onClick={handleFilter}
+									checked={animal === 'cow'}
+									value="cow">
+									Cow <img className="cow" alt="" src={cowImage} />
+								</Button>
+								<Button
+									className="BgBtn"
+									variant="transparent"
+									onClick={handleFilter}
+									checked={animal === 'whale'}
+									value="whale">
+									Whale <img className="whale" alt="" src={whaleImage} />
+								</Button>
+								<Button
+									className="BgBtn"
+									variant="transparent"
+									onClick={handleFilter}
+									checked={animal === 'bee'}
+									value="bee">
+									Bee <img className="bee" alt="" src={beeImage} />
+								</Button>
+							</ButtonGroup>
+
+							<Button
+								className="resetBtn"
+								variant="info"
+								size="lg"
+								onClick={backToDefImg}>
+								Come back Pablita!
+							</Button>
+						</Container>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 }

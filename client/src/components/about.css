@@ -1,12 +1,7 @@
-.bg-image {
-	/* background-image: url('../pictures/peacockfeather.jpg'); */
-	height: 100vh;
-	position: relative;
-	overflow: hidden;
-	text-align: center;
+.aboutContainer {
+	padding-top: 15vh;
 }
 
-.mask {
-	background-color: rgba(0, 0, 0, 0.6);
-	height: 100vh;
+.creditsDiv {
+	padding-top: 10vh;
 }
