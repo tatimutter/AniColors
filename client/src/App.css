@@ -7,6 +7,11 @@
 	/* ANOTHER RADIANT OPTION: background-image: linear-gradient(to right, #553c9a, #14c8cc, #b393d3); */
 }
 
+.navBtn {
+	color: whitesmoke;
+	font-weight: 500;
+}
+
 .navbar-toggler {
 	color: whitesmoke !important;
 	border-color: whitesmoke;
@@ -23,59 +28,64 @@
 	border-style: none;
 }
 
-/* HOME PAGE */
+/* HOME.CSS */
 
 .backgroundDiv {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
 		url('./images/peacockfeather.jpg');
 	background-size: cover;
-	/* background-size: 100%; */
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 100vh;
 	text-align: center;
-
 	padding-top: 15vh;
 	color: whitesmoke;
 }
-
-/* @media (min-width: 992px) {
-	.backgroundDiv {
-		margin-top: -15vh;
-	}
-} */
 
 .backgroundDiv > h1 {
 	text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
 		0px 0px 20px #b393d3;
 	padding-top: 10%;
-	/* padding-bottom: 15%; */
+	padding-bottom: 2%;
 }
 
-.btn {
-	color: whitesmoke;
-	font-weight: 550;
+.backgroundDiv > .lead {
+	padding: 0 5% 2% 5%;
+
+	font-weight: 450;
 }
 
-.startBtn {
+.actionBtn {
 	color: whitesmoke;
 	border-color: whitesmoke;
 }
 
 /* Changed Bootstrap default hover settings  */
-.startBtn:hover,
-.startBtn:focus {
+.actionBtn:hover,
+.actionBtn:focus {
 	color: whitesmoke !important;
 	background-color: transparent !important;
 	border-color: whitesmoke !important;
 	border-width: 0.2rem;
 }
 
-.display-1 > .lead {
-	margin: 5% auto;
+/*ABOUT.CSS*/
+
+.aboutContainer {
+	padding-top: 15vh;
 }
 
-/* ERROR PAGE */
-errorPageDiv {
-	padding-top: 15vh;
+.creditsDiv {
+	padding-top: 10vh;
+}
+
+/* ERRORPAGE.CSS */
+.errorDiv {
+	padding-top: 35vh;
+	color: red;
+}
+
+.homeBtn {
+	color: red;
+	border-color: red;
 }

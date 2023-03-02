@@ -1,6 +1,4 @@
 import Container from 'react-bootstrap/esm/Container';
-import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
-import './about.css';
 
 function About() {
 	return (

@@ -8,16 +8,15 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Figure from 'react-bootstrap/Figure';
-import FigureImage from 'react-bootstrap/FigureImage'
-import FigureCaption from 'react-bootstrap/FigureCaption'
+import FigureImage from 'react-bootstrap/FigureImage';
+import FigureCaption from 'react-bootstrap/FigureCaption';
 
 import defaultImg from '../images/spider_eyes.jpg';
 import catImage from '../images/icons/cat.png';
 import cowImage from '../images/icons/cow.png';
 import whaleImage from '../images/icons/whale.png';
 import beeImage from '../images/icons/bee.png';
-import pixabayLogo from '../images/logo_square.png'
-
+import pixabayLogo from '../images/logo_square.png';
 
 const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&category=nature;animals&image_type=photo`;
 
@@ -50,7 +49,7 @@ export default function Action(props) {
 	};
 
 	const fetchImage = async () => {
-		setAnimal(null); //CHANGE THIS EXPLICATION! Clearing all radio buttons. Solved, thanks to Suraj Sharma https://surajsharma.net/blog/react-handle-radio-buttons
+		setAnimal(null);
 		setError('');
 		setImage(null);
 		setLoading(true);
@@ -63,9 +62,7 @@ export default function Action(props) {
 				setError(`Server error ${response.status} ${response.statusText}`); //
 			} else {
 				let data = await response.json();
-				//console.log(data);
 				let dataArray = data.hits; //getting to the arrays of data
-				//console.log(dataArray);
 				let randomObject =
 					dataArray[Math.floor(Math.random() * dataArray.length)]; //randomly choose one object from the array
 				console.log(randomObject.webformatURL);
@@ -88,7 +85,7 @@ export default function Action(props) {
 			{/* Stack the columns on mobile by making one full-width and the other half-width */}
 			<Container className="container fluid">
 				<Row className="rowContainer ">
-					<Col className="leftCol" xs={12} md={8} lg={8}>
+					<Col className="leftCol" xs={12} md={12} lg={8}>
 						<figure class="image">
 							<div className="imgDiv">
 								{!image && error && <div class="errorDiv">Error: {error}</div>}
@@ -98,10 +95,10 @@ export default function Action(props) {
 								{!image && !error && !loading && (
 									<>
 										<figcaption class="box3 speechBubble">
-											<h3>
+											<h4>
 												Hi, I'm Pablita! <br />
-												I'm here to help you
-											</h3>
+												I'm here to help
+											</h4>
 											<p>
 												Click on me to see a new image and then on the name of a
 												non-human friend to see through their eyes. Click again
@@ -118,41 +115,41 @@ export default function Action(props) {
 										/>
 									</>
 								)}
-								
-        {image && (
-			<Figure>
-			<Figure.Image
-				className={filterClass}
-				id="randomImg"
-				alt="Random img from Pixabay API"
-				src={image}
-				onClick={fetchImage}/>
-			<Figure.Caption className="pixaCaption">
-        Images fetched from Pixabay API.
-		<br/>
-		<img 
-		className="pixabayLogo"
-		alt="Pixabay logo"
-		src={pixabayLogo}/>
 
-      </Figure.Caption>
-    </Figure>
-		)}
-      
-      
-								
+								{image && (
+									<Figure>
+										<Figure.Image
+											className={filterClass}
+											id="randomImg"
+											alt="Random img from Pixabay API"
+											src={image}
+											onClick={fetchImage}
+										/>
+										<Figure.Caption className="pixaCaption">
+											<span>Images fetched from Pixabay API. </span>
+											<img
+												className="pixabayLogo"
+												alt="Pixabay logo"
+												src={pixabayLogo}
+											/>
+										</Figure.Caption>
+									</Figure>
+								)}
 							</div>
 						</figure>
 						<br />
 					</Col>
-					<Col className="rigthCol" xs={12} md={4} lg={4}>
-						<Container fluid className="btnContainer">
+					<Col className="rigthCol" xs={12} md={12} lg={4}>
+						<Container
+							fluid
+							className="choiceContainer {
+">
 							<ButtonGroup
 								className="btnGroup"
 								vertical
 								aria-label="Basic example">
 								<Button
-									className="BgBtn"
+									className="choiceBtn"
 									variant="transparent"
 									onClick={handleFilter}
 									checked={animal === 'cat'}
@@ -160,7 +157,7 @@ export default function Action(props) {
 									Cat <img className="cat" alt="" src={catImage} />
 								</Button>
 								<Button
-									className="BgBtn"
+									className="choiceBtn"
 									variant="transparent"
 									onClick={handleFilter}
 									checked={animal === 'cow'}
@@ -168,7 +165,7 @@ export default function Action(props) {
 									Cow <img className="cow" alt="" src={cowImage} />
 								</Button>
 								<Button
-									className="BgBtn"
+									className="choiceBtn"
 									variant="transparent"
 									onClick={handleFilter}
 									checked={animal === 'whale'}
@@ -176,7 +173,7 @@ export default function Action(props) {
 									Whale <img className="whale" alt="" src={whaleImage} />
 								</Button>
 								<Button
-									className="BgBtn"
+									className="choiceBtn"
 									variant="transparent"
 									onClick={handleFilter}
 									checked={animal === 'bee'}

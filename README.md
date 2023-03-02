@@ -13,40 +13,88 @@ The full-stack App was supposed to let the user choose among a couple of non-hum
 
 Because of a series of unfortunate events, I chose to stick to front-end only, so the structure of the project had to change, giving me the opportunity to play with CSS filters. What the App does know, then, is loading a random image and give the user a choice of four NHAs. Clicking on a NHA, the image will be filtered, (slightly) imitating their particular vision.
 
-The SPA has three/four Routers: Home, Action, About, and ErrorPage.
-The whole action happens (not surprisingly) in the Action Router. In there I created a section where images are uploaded by fetching an API from Pixabay. The API (**\***how do I call that) includes specific categories ('nature', 'animals') and image type ('photos').
-
 ### Technologies I used
 
 I used React, which is the JS library I am using the most at the moment.
 I also used React Routes, which gives me the comfort of developing the project in a SPA.
-For the CSS I used Bootstrap and ReactBootstrap (<https://react-bootstrap.netlify.app/>) importing specific Bootstrap components adapted for React.
+For the CSS I used Bootstrap 5 and React Bootstrap importing specific Bootstrap components adapted for React.
+
+### How it works
+
+The SPA has four routes: Home, Action, About, and ErrorPage (for wrong URLs).
+Home, Action and About will be seen by the user as three actual different pages. They can be accessed through their links in the navbar (Action 'LOOK' in the navbar).
+
+[Important](Home, About and ErrorPage CSS are inside App.css. Action.js has its own dedicated .css file.)
+
+The whole action happens (not surprisingly) in the Action route.
+When the page loads, the user will see a default image (Pablita the jumpong spider) with an instruction message and a box containing four non-human animal choices and a reset button.
+
+By clicking on the image, fetchImage function is activated and random images are uploaded by fetching an API from Pixabay. The API queries includes specific categories ('nature', 'animals') and an image type ('photos').
+
+By clicking on each animal choice:
+
+- handleFilter function assigns the NHA value and calls changeColor function
+- changeColor function sets a specific CSS class
+- each CSS class contains a combination of filters which imitates that specific NHA vision and will modify the image accordingly
+
+Reset button ('Come back Pablita!') recalls the starting default image with its instruction message.
 
 ### Problems and blockers
 
-One of the biggest blocker was ensuring a responsive front-end behaviour for different devices. I would say it's still a work-in-progress.
+The first huge blocker, which I have not overcome yet, was building the back end.
+
+I had to spend some time and ask for help to make some event handlers work.
+
+The last big blocker was ensuring a responsive frontend behaviour for different devices. I would say it's still a work-in-progress.
+
+### Need to do and improve
+
+Accessibility.
+
+Front end styling, particularly responsive design.
+
+Make box appear together with random images.
+
+Normalize .css files (all CSS in just one App.css or a .css for each .js)
+
+Maybe find a better title for the project.
 
 ### Next features
 
-Add back-end:
+Add more filters
 
----
+On the back-end front:
+
+- Create an Images DB with two tables: NH and human images
+- Tables will contain pairs of images that have already been processed to compare human and NH vision
+- Elaborate on that DB
 
 ## Setup
 
-Run `npm install` to install packages.
+Run 'npm install' to install packages.
 
-Run `npm start` to run the development server.
+Run 'npm start' to run the development server.
 
-`cd client` and run `npm install` install dependencies related to React (the client).
+Run 'npm install-react-router-dom' to install ReactRouter.
 
-**\*\*\***INSTALLREACTROUTE (see video)
+Run 'npm install react-bootstrap bootstrap' to install ReactBootstrap.
 
 ### .env file for API key
 
-Create `.env` file in project (client) directory and add
+Log on to Pixabay website <https://pixabay.com> to get your API Key.
 
-REACT_APP_API_KEY = "33852742-89e11093af8722799d8e1010f"
+Create `.env` file in project (client) directory and add your Pixabay API Key
+
+REACT_APP_API_KEY = yourKey
+
+## Resources
+
+[Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+[React Bootstrap](https://react-bootstrap.netlify.app/)
+[React Router](https://reactrouter.com/en/main)
+[Pixabay API](https://pixabay.com/service/about/api/)
+[Speechbubble - original code](https://codingislove.com/css-speech-bubbles/)
+[Inspiration for filters](https://linuxhint.com/change-color-image-blue-css/)
 
 ## Notes
 
