@@ -32,7 +32,7 @@ con.connect(function (err) {
 	// 	'DROP TABLE if exists animal_imgs; CREATE TABLE animalImages(animID INT NOT NULL AUTO_INCREMENT, name VARCHAR(40) not null, src VARCHAR(100) not null, PRIMARY KEY (animID),  FOREIGN KEY (HumID) REFERENCES humanImages(HumID)) ;';
 	// con.query(sql, function (err, result) {
 	// 	if (err) throw err;
-	// 	console.log('Table creation `humanImages` was successful!');
+	// 	console.log('Table creation `animalImages` was successful!');
 
 	// 	console.log('Closing...');
 	// });

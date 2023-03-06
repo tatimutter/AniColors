@@ -95,11 +95,11 @@ export default function Action(props) {
 								{!image && !error && !loading && (
 									<>
 										<figcaption class="box3 speechBubble">
-											<h4>
+											<h3>
 												Hi, I'm Pablita! <br />
 												I'm here to help
-											</h4>
-											<p>
+											</h3>
+											<p className="lead">
 												Click on me to see a new image and then on the name of a
 												non-human friend to see through their eyes. Click again
 												on the image to see another one. <br />

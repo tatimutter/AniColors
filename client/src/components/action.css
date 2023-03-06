@@ -139,14 +139,13 @@
 
 .box3 {
 	width: 18vw;
-	height: 50vh;
+	height: 45vh;
 	margin: 50px auto;
 	border-radius: 15px;
 	background: #14c8cc;
 	color: black;
 	padding: 1.5vw 1vw;
 	text-align: center;
-	/* font-weight: 900; */
 	font-size: medium;
 	position: relative;
 }
