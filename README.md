@@ -17,9 +17,19 @@ Because of a series of unfortunate events, I chose to stick to front-end only, s
 
 ## Setup
 
+#### Client .env file for API key
+
+Log on to Pixabay website <https://pixabay.com> to get your API Key.
+
+Create `.env` file in project (client) directory and add your Pixabay API Key
+
+REACT_APP_API_KEY = yourKey
+
 ### Front-end version
 
 Run `npm install` to install packages.
+This will install ReactRouter and ReactBootstrap, too.
+
 Run `npm start` to run the development server.
 
 ### Full-stack version
@@ -29,10 +39,6 @@ Run `npm start` to run the development server.
 Run `npm install` in the project folder to install dependencies related to Express (the server).
 
 `cd client` and run `npm install` install dependencies related to React (the client).
-
-Run 'npm install-react-router-dom' to install ReactRouter.
-
-Rrun 'npm install react-bootstrap bootstrap' to install ReactBootstrap.
 
 #### Database Prep
 
@@ -55,28 +61,10 @@ Run the following in the MySQL CLI: `ALTER USER 'root'@'localhost' IDENTIFIED WI
 
 Run `node model/database.js` in your **TERMINAL**, in the **project** folder (not your MySQL CLI! Open a new terminal window for this). This will create a table called 'items' in your database.
 
-#### Client .env file for API key
-
-Log on to Pixabay website <https://pixabay.com> to get your API Key.
-
-Create `.env` file in project (client) directory and add your Pixabay API Key
-
-REACT_APP_API_KEY = yourKey
-
 #### Run Your Development Servers
 
 - Run `npm start` in project directory to start the Express server on port 5000
-- `cd client` and run `npm start` to start client server in development mode with hot reloading in port 3000.
 
-Run `npm install` in the project folder to install dependencies related to Express (the server).
-
-`cd client` and run `npm install` install dependencies related to React (the client).
-
-Cd 'client' and run 'npm install-react-router-dom' to install ReactRouter.
-
-Cd 'client' and run 'npm install react-bootstrap bootstrap' to install ReactBootstrap.
-
-- Run `npm start` in project directory to start the Express server on port 5000
 - `cd client` and run `npm start` to start client server in development mode with hot reloading in port 3000.
 
 ## Technologies I used
