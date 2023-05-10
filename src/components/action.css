@@ -43,15 +43,8 @@
 .imgDiv {
 	height: 60vh;
 	display: flex;
-	/* align-items: center; */
 	justify-content: flex-end;
 }
-
-/* @media (max-width: 790px) {
-	.imgDiv {
-		position: relative;
-	}
-} */
 
 /*Error message*/
 .errorDiv {
@@ -68,11 +61,8 @@
 	margin-top: 10vh;
 }
 
-/* .defaultImg {
-	position: relative;
-} */
-
 /*Section for default image and its speech bubble*/
+
 .image .speechBubble {
 	position: absolute;
 	z-index: 1;
@@ -80,14 +70,38 @@
 	bottom: 30%;
 	left: 1%;
 	padding-top: 1.5vh;
+
+	height: 50%;
 	color: black;
+}
+
+.box-title {
+	font-weight: 600;
+}
+
+.lead {
+	padding-top: 1.7vh;
+	padding-bottom: 1vh;
 	font-weight: 420;
+	font-size: 1rem; /*add media queries*/
+}
+
+@media (min-width: 280px) and (max-width: 390px) {
+	.lead {
+		font-size: 1.2rem; /*add media queries*/
+	}
+}
+
+@media (min-width: 391px) and (max-width: 790px) {
+	.lead {
+		font-size: 1.2rem; /*add media queries*/
+	}
 }
 
 @media (min-width: 280px) and (max-width: 390px) {
 	.image .speechBubble {
 		width: 90%;
-		height: 40%;
+		height: 35%;
 		position: absolute;
 		z-index: 2;
 		left: -12%;
@@ -107,11 +121,8 @@
 		top: 60%;
 		bottom: 10%;
 		left: 1%;
+		padding: 1rem;
 	}
-}
-
-.image .speechBubble > p {
-	padding-top: 1.7vh;
 }
 
 @media (min-width: 280px) and (max-width: 360px) {
@@ -249,13 +260,13 @@ label {
 	top: 80%;
 	left: 50%;
 	right: -20%;
-	transform: translate(-50%);
 	font-weight: 550;
 
 	-webkit-transform: translate(-50%);
 	-moz-transform: translate(-50%);
 	-ms-transform: translate(-50%);
 	-o-transform: translate(-50%);
+	transform: translate(-50%);
 }
 
 /* FILTERS */

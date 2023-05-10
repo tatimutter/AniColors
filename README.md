@@ -1,89 +1,60 @@
-# AniColors App
-
-## Project's Description
+# AniColors
 
 Hi!
 
-The original aim of this App is to provide the user an easy way to see how other animals see the world.
-Its long-shot/utopic objective would be to directly manipulate devices' camera filters in order to immediately filter camera view and let the user see through their device what another (non-human) being would see.
+The aim of this Web App is to provide the user an easy way to see how other animals see the world.
 
-But for now we have this:
+AniColor's main feature is to get random images from a third-party API and to allow users to choose among four animals and view how each of them would see each image. When the user clicks on an animal icon, a specific CSS filter combination modifies the image, replicating a verisimilar visual perception of the selected animal.
 
-The full-stack App was supposed to let the user choose among a couple of non-human animals (NHA) and to compare between human and non-human vision. That is, the App was supposed to contain a database with some pre-loaded images - a specific pair of images for each NHA (one image of the pair showing the human vision and the other the non-human vision) - and, when the user chose the NHA, that specific pair of images would be get and loaded to the frontend.
-
-Because of a series of unfortunate events, I chose to stick to front-end only, so the structure of the project had to change, giving me the opportunity to play with CSS filters. What the App does know, then, is loading a random image and give the user a choice of four NHAs. Clicking on a NHA, the image will be filtered, (slightly) imitating their particular vision.
-
-[Note] Since I started with a full-stack, you will find instructions about DB tables already written in model/database.js.
+For the moment, AniColors is a front-end-only project.
 
 ## Setup
 
-#### Client .env file for API key
+Clone the project:
 
-Log on to Pixabay website <https://pixabay.com> to get your API Key.
-
-Create `.env` file in project (client) directory and add your Pixabay API Key
-
-REACT_APP_API_KEY = yourKey
-
-### Front-end version
-
-Run `npm install` to install packages.
-This will install ReactRouter and ReactBootstrap, too.
-
-Run `npm start` to run the development server.
-
-### Full-stack version
-
-#### Dependencies
-
-Run `npm install` in the project folder to install dependencies related to Express (the server).
-
-`cd client` and run `npm install` install dependencies related to React (the client).
-
-#### Database Prep
-
-Create `.env` file in project directory and add
-
-```
-DB_HOST=localhost
-DB_USER=root
-DB_NAME=images
-DB_PASS=YOUR_PASSWORD
+```bash
+  git clone https://github.com/tatimutter/AniColors.git
 ```
 
-(replace `YOUR_PASSWORD` with your actual password)
+Go to the project directory:
 
-Type `mysql -u root -p` to access the MySQL CLI using your password.
+```bash
+  cd AniColors
+```
 
-In the MySQL CLI, type `create database images;` to create a database in MySQL.
+Install dependencies:
 
-Run the following in the MySQL CLI: `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';` (replace `YOUR_PASSWORD` with your actual password)
+```bash
+  npm install
+```
 
-Run `node model/database.js` in your **TERMINAL**, in the **project** folder (not your MySQL CLI! Open a new terminal window for this). This will create a table called 'items' in your database.
+Start the server in development mode with hot reloading in port 3000:
 
-#### Run Your Development Servers
+```bash
+  npm run start
+```
 
-- Run `npm start` in project directory to start the Express server on port 5000
+## External API Prep
 
-- `cd client` and run `npm start` to start client server in development mode with hot reloading in port 3000.
+- Go to Pixabay website <https://pixabay.com> and log on to get your API Key.
 
-## Technologies I used
+- Add a `.env` file to the project directory containing your Pixabay API Key:
+  - REACT_APP_API_KEY=yourKey
 
-I used React, which is the JS library I am using the most at the moment.
-I also used React Routes, which gives me the comfort of developing the project in a SPA.
-For the CSS I used Bootstrap 5 and React Bootstrap importing specific Bootstrap components adapted for React.
+## Technologies
 
-## How it works
+React, React Routes, Bootstrap 5
 
-The SPA has four routes: Home, Action, About, and ErrorPage (for wrong URLs).
-Home, Action and About will be seen by the user as three actual different pages. They can be accessed through their links in the navbar (Action 'LOOK' in the navbar).
+## Features
 
-[Important](Home, About and ErrorPage CSS are inside App.css. Action.js has its own dedicated .css file.)
+The SPA has four components/routes: Home, Action, About, and ErrorPage (for wrong URLs).
+Home, Action and About will be seen by the user as three actual different pages. They can be accessed through their links in the navbar (Action's link is 'LOOK' in the navbar).
 
-The whole action happens (not surprisingly) in the Action route.
-When the page loads, the user will see a default image (Pablita the jumpong spider) with an instruction message and a box containing four non-human animal choices and a reset button.
+Home, About and ErrorPage are styled in App.css. Action.js has its own dedicated .css file.
 
-By clicking on the image, fetchImage function is activated and random images are uploaded by fetching an API from Pixabay. The API queries includes specific categories ('nature', 'animals') and an image type ('photos').
+In the Action route the user will see a default image (Pablita the jumping spider) with an instruction message and a box containing four non-human-animal (NHA) choices and a reset button.
+
+By clicking on the image, fetchImage function is called and random images are uploaded by fetching an API from Pixabay. The API queries include specific categories ('nature', 'animals') and an image type ('photos').
 
 By clicking on each animal choice:
 
@@ -93,44 +64,47 @@ By clicking on each animal choice:
 
 Reset button ('Come back Pablita!') recalls the starting default image with its instruction message.
 
-## Problems and blockers
+## Lessons learned
 
-The first huge blocker, which I have not overcome yet, was building the back end.
+To create a SPA and use routing with React Routers.
 
-I had to spend some time and ask for help to make some event handlers work.
+To add a responsive background image.
 
-The last big blocker was ensuring a responsive frontend behaviour for different devices. I would say it's still a work-in-progress.
+To use CSS filter.
 
-## Need to do and improve
+## Challenges and blockers
 
-Accessibility.
+Total responsive behavior is still a work-in-progress.
 
-Front end styling, particularly responsive design.
-
-Make box appear together with random images.
-
-Normalize .css files (all CSS in just one App.css or a .css for each .js)
-
-Maybe find a better title for the project.
+Accessibility needs improving.
 
 ## Next features
 
-Add more filters
+Make instruction box appear at the same time as random images.
 
-On the back-end front:
+Add more animals.
+
+Create back-end:
 
 - Create an 'images' DB with two tables: NH and human images
 - Tables will contain pairs of images that have already been processed to compare human and NH vision
 - Elaborate on that DB
 
-## Resources
+## Documentation
 
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 [React Bootstrap](https://react-bootstrap.netlify.app/)
 [React Router](https://reactrouter.com/en/main)
 [Pixabay API](https://pixabay.com/service/about/api/)
+
+## Acknowledgements
+
 [Speechbubble - original code](https://codingislove.com/css-speech-bubbles/)
 [Inspiration for filters](https://linuxhint.com/change-color-image-blue-css/)
+
+## Author
+
+- [@tatimutter](https://github.com/tatimutter/)
 
 ## Notes
 

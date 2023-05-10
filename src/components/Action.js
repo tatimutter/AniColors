@@ -95,7 +95,7 @@ export default function Action(props) {
 								{!image && !error && !loading && (
 									<>
 										<figcaption class="box3 speechBubble">
-											<h3>
+											<h3 class="box-title">
 												Hi, I'm Pablita! <br />
 												I'm here to help
 											</h3>

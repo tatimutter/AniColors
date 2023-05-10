@@ -10,21 +10,6 @@ import ErrorPage from './components/ErrorPage';
 import { Routes, Route, NavLink } from 'react-router-dom';
 
 function App() {
-	// 	useEffect(() => {
-	// 		getHumImgs();
-	// 	}, []);
-
-	// 	let [humImgs, setHumImgs] = useState([]);
-
-	// let [newImage, setNewImage] = useState({
-	// 	name
-	// })
-
-	// const getHumImgs = async () => {
-	// 	fetch('/humans')
-
-	// }
-
 	return (
 		<div className="App">
 			<nav className="navbar fixed-top justify-content-end navbar-expand-lg navbar-light shadow p-3 mb-5">
