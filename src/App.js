@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
@@ -51,14 +50,12 @@ function App() {
 				</div>
 			</nav>
 
-			{/* <div className="test"> */}
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/action" element={<Action />} />
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>
-			{/* </div> */}
 		</div>
 	);
 }

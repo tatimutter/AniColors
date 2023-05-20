@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Figure from 'react-bootstrap/Figure';
-import FigureImage from 'react-bootstrap/FigureImage';
-import FigureCaption from 'react-bootstrap/FigureCaption';
+//import FigureImage from 'react-bootstrap/FigureImage';
+//import FigureCaption from 'react-bootstrap/FigureCaption';
 
 import defaultImg from '../images/spider_eyes.jpg';
 import catImage from '../images/icons/cat.png';
@@ -26,13 +26,13 @@ export default function Action(props) {
 	const [image, setImage] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [filterClass, setFilterClass] = useState(null);
-	// const [checked, setChecked] = useState(null);
 
 	const handleFilter = (e) => {
 		setAnimal(e.target.value);
 		changeColor(e.target.value);
 	};
 
+	//Set specific filter class for each animal
 	const changeColor = (animal) => {
 		if (animal === 'cat') {
 			setFilterClass('catFilter');
@@ -48,6 +48,7 @@ export default function Action(props) {
 		}
 	};
 
+	//Fetch random image from API
 	const fetchImage = async () => {
 		setAnimal(null);
 		setError('');
@@ -76,13 +77,13 @@ export default function Action(props) {
 		setLoading(false);
 	};
 
+	//Back to default image
 	const backToDefImg = () => {
 		setImage(null);
 	};
 
 	return (
 		<div className="actionBG">
-			{/* Stack the columns on mobile by making one full-width and the other half-width */}
 			<Container className="container fluid">
 				<Row className="rowContainer ">
 					<Col className="leftCol" xs={12} md={12} lg={8}>
@@ -121,10 +122,11 @@ export default function Action(props) {
 										<Figure.Image
 											className={filterClass}
 											id="randomImg"
-											alt="Random img from Pixabay API"
+											alt="Random picture from Pixabay API"
 											src={image}
 											onClick={fetchImage}
 										/>
+										{/* Pixabay credits */}
 										<Figure.Caption className="pixaCaption">
 											<span>Images fetched from Pixabay API. </span>
 											<img

@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 
-//HOMEPIC LINK: https://qph.cf2.quoracdn.net/main-qimg-8cff84922129f22abfa62cc8636d5901.webp
-
 function Home(props) {
 	return (
 		<>

@@ -56,7 +56,6 @@ function About() {
 					</a>
 					<span> (Image credit: Shutterstock)</span>
 				</p>
-				{/* APIs!!!! */}
 				<h4>Icons</h4>
 				<p>
 					All the icons come from{' '}
@@ -88,10 +87,6 @@ function About() {
 					Animal icons created by Freepik - Flaticon
 				</a>
 			</div>
-			{/* <p><span>Pablita's speech bubble was created with the help of	</span>
-
-  <a href="https://www.youtube.com/channel/UCtVM2RthR4aC6o7dzySmExA"> Coding Market</a>
- </p>*/}
 		</Container>
 	);
 }
