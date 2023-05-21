@@ -7,7 +7,7 @@ function Home(props) {
 	return (
 		<>
 			<div className="backgroundDiv bg-image">
-				<h1 className="display-1 fw-bold">AniColors</h1>
+				<h1 className="app-title display-1 fw-bold">AniColors</h1>
 
 				<p className="lead">
 					There are endless words on Earth, as many as we can see.

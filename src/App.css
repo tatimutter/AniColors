@@ -4,12 +4,12 @@
 
 .navbar {
 	background-image: radial-gradient(circle, #14c8cc, #b393d3, #553c9a);
-	/* ANOTHER RADIANT OPTION: background-image: linear-gradient(to right, #553c9a, #14c8cc, #b393d3); */
+	/* another radiant option: background-image: linear-gradient(to right, #553c9a, #14c8cc, #b393d3); */
 }
 
 .navBtn {
 	color: whitesmoke;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .navbar-toggler {
@@ -51,13 +51,36 @@
 
 .backgroundDiv > .lead {
 	padding: 0 5% 2% 5%;
-
 	font-weight: 450;
+	font-size: 4vh;
+}
+
+@media (min-width: 320px) and (max-width: 360px) {
+	.backgroundDiv > .lead {
+		font-weight: 450;
+		font-size: 2rem;
+	}
+}
+
+.app-title {
+	font-weight: 800;
+	font-size: 5rem;
+}
+
+@media (min-width: 320px) and (max-width: 360px) {
+	.app-title {
+		font-weight: 800;
+		font-size: 4rem;
+	}
 }
 
 .actionBtn {
-	color: whitesmoke;
+	color: black;
+	font-weight: 650;
+	font-size: 2rem;
 	border-color: whitesmoke;
+	background-color: whitesmoke;
+	height: 11vh;
 }
 
 /* Changed Bootstrap default hover settings  */

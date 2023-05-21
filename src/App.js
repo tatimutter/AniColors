@@ -34,7 +34,7 @@ function App() {
 						</li>
 						<li class="nav-item">
 							<NavLink to="/action">
-								<button type="button" className="btn bg-transparent navBtn">
+								<button type="button" className="btn lg bg-transparent navBtn">
 									LOOK
 								</button>
 							</NavLink>
